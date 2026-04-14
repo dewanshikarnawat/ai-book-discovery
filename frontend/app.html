@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Book Discovery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>Book Recommendations</span>
+            </div>
+            <div class="stats">
+                <span><i class="fas fa-database"></i> 11K+ Books</span>
+                <span><i class="fas fa-brain"></i> AI Powered</span>
+            </div>
+
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+
+
+
+            
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Next Book</h1>
+            <p>AI recommendations from 11K+ books database</p>
+
+            <div class="search-box">
+    <input type="text" id="bookInput" placeholder="harry potter, 1984, da vinci...">
+
+    <button onclick="startVoiceSearch()" title="Voice Search">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <button onclick="getRecommendations()">
+        <i class="fas fa-search"></i> Search
+    </button>
+</div>
+
+            <div class="search-history" id="searchHistory" style="display:none;">
+    <p class="history-title">Recent Searches</p>
+    <div class="history-list" id="historyList"></div>
+</div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="popular-books">
+    <div class="container">
+        <h2>🔥 Most Recommended</h2>
+        <div id="mostRecommended" class="books-grid"></div>
+
+        <h2>⭐ Top Rated</h2>
+        <div id="topRated" class="books-grid"></div>
+    </div>
+</section>
+
+
+    <section class="results" id="results" style="display:none;">
+        <div class="container">
+            <h2 id="resultsTitle">Recommended Books</h2>
+            <button onclick="clearResults()" class="clear-btn">Clear</button>
+            <div id="booksGrid" class="books-grid"></div>
+        </div>
+    </section>
+
+    <div id="loading" class="loading" style="display:none;">
+        <i class="fas fa-spinner fa-spin"></i> AI Searching...
+    </div>
+
+    <div id="error" class="error" style="display:none;"></div>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
