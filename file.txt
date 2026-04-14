@@ -1,2 +1,3 @@
 Hello Git
 new line
+new feature
