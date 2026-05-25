@@ -1,184 +1,205 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=📚+AI+Book+Discovery;Find+Your+Next+Favourite+Read;Powered+by+AI+%2B+Open+Data" alt="Typing SVG" />
+# 📚 AI Book Discovery
 
-<br/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=AI-Powered+Book+Recommendation+System;Discover+Your+Next+Favorite+Book;Built+with+Python+%2B+AI" />
 
-**An AI-powered book recommendation app that understands what you love and surfaces what you'll read next.**
+<br>
 
-<br/>
+### 🚀 Smart book recommendations powered by AI and open book APIs
+
+<br>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![License](https://img.shields.io/github/license/dewanshikarnawat/ai-book-discovery?style=flat-square&color=6366f1)
-![Last Commit](https://img.shields.io/github/last-commit/dewanshikarnawat/ai-book-discovery?style=flat-square&color=10b981)
-![Stars](https://img.shields.io/github/stars/dewanshikarnawat/ai-book-discovery?style=flat-square&color=f59e0b)
-![Forks](https://img.shields.io/github/forks/dewanshikarnawat/ai-book-discovery?style=flat-square&color=6366f1)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-[🚀 Live Demo](#) · [🐛 Report Bug](https://github.com/dewanshikarnawat/ai-book-discovery/issues) · [✨ Request Feature](https://github.com/dewanshikarnawat/ai-book-discovery/issues)
+![Stars](https://img.shields.io/github/stars/dewanshikarnawat/ai-book-discovery?style=flat-square)
+![Forks](https://img.shields.io/github/forks/dewanshikarnawat/ai-book-discovery?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/dewanshikarnawat/ai-book-discovery?style=flat-square)
+![License](https://img.shields.io/github/license/dewanshikarnawat/ai-book-discovery?style=flat-square)
 
 </div>
 
 ---
 
-## 📸 Screenshots
+# ✨ Features
 
-> _Add a screenshot or GIF of the running app here — it's the single biggest factor in whether someone stars or bounces._
-
-```
-[ Place your app screenshot or demo GIF here ]
-```
-
----
-
-## ✨ Features
-
-- 🤖 **AI-Powered Recommendations** — Describe your mood, a theme, or a book you loved and get instant personalised suggestions
-- 🔍 **Smart Search** — Search by title, author, genre, or a natural-language description
-- 📖 **Rich Book Details** — Cover art, description, ratings, genre tags, and similar titles
-- 🌐 **REST API Backend** — Clean Python API serving structured JSON to any client
-- 💅 **Responsive UI** — Works on desktop and mobile without friction
-- ⚡ **Fast & Lightweight** — No heavy frameworks, loads instantly
+- 🤖 AI-powered personalized book recommendations
+- 🔍 Smart search using title, genre, author, or mood
+- 📚 Detailed book information with ratings and descriptions
+- ⚡ Fast and responsive frontend experience
+- 🌐 REST API backend integration
+- 📱 Mobile-friendly interface
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| **Backend** | Python · Flask / FastAPI |
-| **Frontend** | HTML · CSS · Vanilla JavaScript |
-| **AI / LLM** | OpenAI API / Google Gemini _(update as applicable)_ |
-| **Books Data** | Google Books API / Open Library API |
-| **Deployment** | _(e.g. Render, Railway, Vercel — add yours)_ |
+| Category | Technologies |
+|----------|--------------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Python, Flask |
+| APIs | Google Books API |
+| AI Integration | OpenAI / Gemini API |
+| Deployment | Render / Vercel |
 
 ---
 
-## 🗂️ Project Structure
+# 📂 Project Structure
 
-```
+```bash
 ai-book-discovery/
+│
 ├── backend/
-│   ├── app.py            ← Main server entry point
-│   ├── routes/           ← API route handlers
-│   ├── services/         ← AI + books API logic
-│   └── requirements.txt  ← Python dependencies
+│   ├── app.py
+│   ├── routes/
+│   ├── services/
+│   └── requirements.txt
+│
 ├── frontend/
-│   ├── index.html        ← App shell
-│   ├── style.css         ← Styles
-│   └── script.js         ← Frontend logic & API calls
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### Prerequisites
-
-- Python 3.10+
-- API keys for your AI provider and Google Books
-
-### 1 — Clone the repo
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/dewanshikarnawat/ai-book-discovery.git
 cd ai-book-discovery
 ```
 
-### 2 — Set up the backend
+---
+
+## 2️⃣ Backend Setup
 
 ```bash
 cd backend
+
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+
+# Activate virtual environment
+
+# Windows
+venv\Scripts\activate
+
+# Linux / Mac
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-### 3 — Configure environment variables
+---
 
-Create a `.env` file inside `backend/`:
+## 3️⃣ Environment Variables
+
+Create a `.env` file inside `backend/`
 
 ```env
-OPENAI_API_KEY=your_openai_key_here
-GOOGLE_BOOKS_API_KEY=your_google_books_key_here
+OPENAI_API_KEY=your_api_key
+GOOGLE_BOOKS_API_KEY=your_api_key
 ```
 
-### 4 — Run the backend
+---
+
+## 4️⃣ Run Backend
 
 ```bash
 python app.py
-# Server starts at http://localhost:5000
 ```
 
-### 5 — Open the frontend
+Backend runs at:
 
 ```bash
-cd ../frontend
-python -m http.server 3000
-# App available at http://localhost:3000
+http://localhost:5000
 ```
 
 ---
 
-## 🔌 API Reference
+## 5️⃣ Run Frontend
+
+```bash
+cd frontend
+python -m http.server 3000
+```
+
+Frontend runs at:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+# 📸 Screenshots
+
+> Add your project screenshots here for better presentation.
+
+```bash
+screenshots/homepage.png
+screenshots/recommendation-page.png
+```
+
+---
+
+# 🔌 API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/api/recommend?q=<query>` | AI-powered book recommendations |
-| `GET` | `/api/search?q=<title>` | Search books by title or author |
-| `GET` | `/api/book/<id>` | Details for a specific book |
-
-> FastAPI users: interactive docs are auto-generated at `/docs`.
+| GET | `/api/recommend?q=` | AI book recommendations |
+| GET | `/api/search?q=` | Search books |
+| GET | `/api/book/<id>` | Get book details |
 
 ---
 
-## 🤝 Contributing
+# 🎯 Future Improvements
 
-Contributions are welcome!
+- ✅ User authentication
+- ✅ Save favorite books
+- ✅ Dark mode support
+- ✅ Reading history
+- ✅ Better AI recommendations
+- ✅ Docker deployment
 
-1. Fork the repo
-2. Create your branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m "Add amazing feature"`
-4. Push: `git push origin feature/amazing-feature`
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Push your branch
 5. Open a Pull Request
 
 ---
 
-## 📋 Roadmap
-
-- [ ] User accounts and saved reading lists
-- [ ] Goodreads export integration
-- [ ] Book rating and review system
-- [ ] Chrome extension for one-click recommendations
-- [ ] Docker support for easy self-hosting
-- [ ] Dark mode
-
----
-
-## 📬 Connect
+# 📬 Connect With Me
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-dewanshikarnawat-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/dewanshikarnawat)
-[![GitHub](https://img.shields.io/badge/GitHub-dewanshikarnawat-181717?style=flat-square&logo=github)](https://github.com/dewanshikarnawat)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dewanshi_Karnawat-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/dewanshikarnawat)
+
+[![GitHub](https://img.shields.io/badge/GitHub-dewanshikarnawat-181717?style=for-the-badge&logo=github)](https://github.com/dewanshikarnawat)
 
 </div>
 
 ---
 
-## 📄 License
-
-Distributed under the MIT License. See [`LICENSE`](./LICENSE) for details.
-
----
-
 <div align="center">
 
-If this helped you discover your next favourite book — or helped you build something — please drop a ⭐  
-It genuinely helps this project reach more readers and developers!
+⭐ Star this repository if you found it useful!
 
-_Made with 💜 by [Dewanshi Karnawat](https://github.com/dewanshikarnawat)_
+Made with ❤️ by Dewanshi Karnawat
 
 </div>
