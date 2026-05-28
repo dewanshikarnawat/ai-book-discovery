@@ -188,7 +188,7 @@ Contributions are welcome.
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dewanshi_Karnawat-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/dewanshikarnawat)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Dewanshi_Karnawat-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/dewanshi-karnawat-388578353/)
 
 [![GitHub](https://img.shields.io/badge/GitHub-dewanshikarnawat-181717?style=for-the-badge&logo=github)](https://github.com/dewanshikarnawat)
 
