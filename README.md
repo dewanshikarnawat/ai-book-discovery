@@ -15,11 +15,6 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-![Stars](https://img.shields.io/github/stars/dewanshikarnawat/ai-book-discovery?style=flat-square)
-![Forks](https://img.shields.io/github/forks/dewanshikarnawat/ai-book-discovery?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/dewanshikarnawat/ai-book-discovery?style=flat-square)
-![License](https://img.shields.io/github/license/dewanshikarnawat/ai-book-discovery?style=flat-square)
-
 </div>
 
 ---
