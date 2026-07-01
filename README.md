@@ -292,16 +292,18 @@ graph TD
 graph TD
     User([User drags/selects a PNG/JPG/SVG/WEBP]) --> Uploader["frontend/src/components/ui/ImageUploader.jsx - handleFile(file)"]
     Uploader -->|Client-side validation| Validate{"Format & Size OK?"}
-    Validate -->|No| Error["Inline error: unsupported format / too large"]
-    Validate -->|Yes| Preview["FileReader - local base64 preview + crop/zoom/rotate editor"]
+    Validate -->|No| Error["Inline error: unsupported format /too large"]
+    Validate -->|Yes| Preview["FileReader preview + crop/zoom/rotate"]
     Preview -->|Confirm| Upload["multipart/form-data POST"]
-    Upload -->|api.post('/media/upload')| Api["frontend/src/services/api.js"]
-    Api -->|POST /api/media/upload| Controller["backend/.../MediaUploadController.java"]
-    Controller -->|resource_type=auto -> image| CloudSvc["CloudinaryServiceImpl.uploadFile()"]
-    CloudSvc --> Cloudinary[(Cloudinary Storage - image asset)]
-    Cloudinary -->|secure_url| Controller -->|HTTP 200 - url| Api --> Uploader
-    Uploader -->|onChange callback| Parent["Category/Course/Module/Submodule Form or Content Block Form"]
-    Parent -->|logo/banner/thumbnail/imageUrl field| Save["POST or PUT to /api/categories, /api/courses, /api/modules, /api/submodules, or /api/contents"]
+    Upload -->|POST /api/media/upload| Api["frontend/src/services/api.js"]
+    Api --> Controller["MediaUploadController.java"]
+    Controller -->|resource_type=auto| CloudSvc["CloudinaryServiceImpl.uploadFile()"]
+    CloudSvc --> Cloudinary[(Cloudinary)]
+    Cloudinary -->|secure_url| Controller
+    Controller -->|HTTP 200| Api
+    Api --> Uploader
+    Uploader -->|onChange| Parent["Parent Form"]
+    Parent --> Save["POST/PUT Entity"]
 ```
 
 #### Step-by-Step Execution Sequence
