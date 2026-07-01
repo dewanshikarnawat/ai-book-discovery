@@ -255,23 +255,26 @@ All three entry points below call the exact same `POST /media/upload` endpoint v
 
 ```mermaid
 graph TD
-    User([User clicks "Add PDF/PPT" block and selects file]) --> Workspace["frontend/src/features/course/CourseBuilderWorkspace.jsx - handleInlineFileUpload(file)"]
-    Workspace -->|multipart/form-data| Api["frontend/src/services/api.js - api.post('/media/upload')"]
-    Api -->|POST /api/media/upload| Controller["backend/.../MediaUploadController.java - uploadFile()"]
-    Controller -->|isConfigured?| Check{"CloudinaryService.isConfigured()"}
-    Check -->|Yes| CloudSvc["CloudinaryServiceImpl.uploadFile() - resource_type=auto"]
+    User([User clicks Add PDF/PPT block and selects file]) --> Workspace["frontend/src/features/course/CourseBuilderWorkspace.jsx - handleInlineFileUpload(file)"]
+    Workspace -->|multipart/form-data| Api["frontend/src/services/api.js"]
+    Api -->|POST /api/media/upload| Controller["backend/.../MediaUploadController.java"]
+    Controller -->|isConfigured?| Check{Cloudinary configured?}
+    Check -->|Yes| CloudSvc["CloudinaryServiceImpl.uploadFile"]
     CloudSvc -->|SDK call| Cloudinary[(Cloudinary Storage)]
-    Cloudinary -->|secure_url, bytes| CloudSvc --> Controller
-    Check -->|No / Exception| LocalFS["Write to backend/uploads/ with UUID filename"]
+    Cloudinary -->|secure_url, bytes| CloudSvc
+    CloudSvc --> Controller
+    Check -->|No / Exception| LocalFS["backend/uploads with UUID filename"]
     LocalFS --> Controller
-    Controller -->|HTTP 200 - url, name, size| Api --> Workspace
-    Workspace -->|Sets contentForm.fileUrl / fileSize| Form["Content Block Form State"]
-    Form -->|User clicks Save| Hook["frontend/src/hooks/useCatalog.jsx - addContent()/updateContent()"]
-    Hook -->|mapContentToBackendPayload - JSON.stringify| Payload["text = JSON string: fileUrl, fileSize, pageCount/slideCount"]
-    Payload -->|Axios client| Api2["api.post('/contents') or api.put('/contents/id')"]
+    Controller -->|HTTP 200| Api
+    Api --> Workspace
+    Workspace -->|Sets fileUrl and fileSize| Form["Content Block Form State"]
+    Form -->|User clicks Save| Hook["frontend/src/hooks/useCatalog.jsx"]
+    Hook -->|Create JSON payload| Payload["text JSON"]
+    Payload -->|Axios client| Api2["Contents API"]
     Api2 -->|POST/PUT /api/contents| ContentCtrl["backend/.../ContentController.java"]
-    ContentCtrl --> ContentSvc["ContentServiceImpl.java"] --> ContentRepo["ContentRepository.java - save()"]
-    ContentRepo -->|SQL INSERT/UPDATE - text column holds JSON| DB[(DB contents)]
+    ContentCtrl --> ContentSvc["ContentServiceImpl.java"]
+    ContentSvc --> ContentRepo["ContentRepository.java"]
+    ContentRepo -->|INSERT/UPDATE| DB[(DB contents)]
 ```
 
 #### Step-by-Step Execution Sequence
